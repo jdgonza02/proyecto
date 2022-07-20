@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    {% block title %}<title>pureba de documento</title>{% endblock %}
+    </head>
+
+    <body>
+        {% block content %}
+            <form>
+                <h3>Formulario de prueba</h3>
+                <label>usuario: </label><input type="text" placeholder="ingrese su usuario" required></input>
+                <label>clave: </label><input type="password" placeholder="ingrese su clave" required></input>
+                <p>recuperar clave: <a href="{% url 'blog:home' %}">aqui</a></p>
+                <button type="submit">Entrar</buttom>
+            </form>
+        {% endblock %}
+    </body>
+</html>
