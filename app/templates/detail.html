@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+<div class="container">
+    {% block content %}
+        <br>
+        <h3>{{post.title}}</h3>
+        <br>
+        <p>{{post.content}}</p>
+        <br>
+        <a href="{% url 'blog:create' %}">crea un nuevo post dando click aqui</a>
+        <br>
+        <a href="{% url 'blog:home' %}">volver a posts</a>
+    {% endblock %}
+</div>

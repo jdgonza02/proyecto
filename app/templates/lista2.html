@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+<div class="container" id="fondo">
+    {% block content %}
+        <h3>Posts publicados</h3>
+        <ul>
+        {% for post in posts %}
+            <li><a href="{% url 'blog:detail' post.id %}">{{post.title}}</a>
+            <a href="{% url 'blog:update' post.id %}">actualizar</button>
+            <a href="{% url 'blog:delete' post.id %}">borrar</a>
+            </li>
+        {%endfor%}
+        </ul>
+        <br>
+        <br>
+        <a href="{% url 'blog:create' %}">volver a crear posts</a>
+    {% endblock %}
+</div>

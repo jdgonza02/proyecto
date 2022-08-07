@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+<div class="container">
+    {% block content %}
+        <form method="POST">
+        {% csrf_token %}
+        <p>Esta accion es irreversible, seguro que quieres borrar el post: {{post.title}}</p>
+        <br>
+        {{form}}
+        <button tipe="submit">Borrar post</button>
+        </form>
+    {% endblock content %}
+</div>

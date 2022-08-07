@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+<div class="container" id="fondo">
+    {% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        title:{{form.title}}
+        <br>
+        <br>
+        content:{{form.content}}
+        <br>
+        <br>
+        <button tipe="submit">crear post</button>
+    </form>
+</div>
+{% endblock %}

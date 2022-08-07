@@ -1,18 +1,31 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
-    {% block title %}<title>pureba de documento</title>{% endblock %}
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <title>{% block title %}pureba de documento{% endblock %}</title>
     </head>
 
     <body>
+        <nav>
+            {% block navbar %}
+                <div>
+                    <ul class="nav navbar-nav">
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="{% url 'blog:home' %}">Blog</a></li>
+                    <li><a href="#">Inicio</a></li> 
+                    </ul>
+                </div>
+            {% endblock %}
+        </nav>
+        <div class="container">
         {% block content %}
-            <form>
-                <h3>Formulario de prueba</h3>
-                <label>usuario: </label><input type="text" placeholder="ingrese su usuario" required></input>
-                <label>clave: </label><input type="password" placeholder="ingrese su clave" required></input>
-                <p>recuperar clave: <a href="{% url 'blog:home' %}">aqui</a></p>
-                <button type="submit">Entrar</buttom>
-            </form>
+
         {% endblock %}
+        </div>
+        <br>
+        <footer>
+            <p> Gracias por visitarnos!! </p>
+        </footer>
     </body>
 </html>
